@@ -21,8 +21,12 @@ def execute_counting_sort():
 
 if __name__ == '__main__':
 
-    arr = dataset['kecil_randomized']
+    arr = dataset['kecil_reversed']
+    # arr = [1,2,9,3,0,47,12,4,3]
+    # arr1 = [1,2,9,3,0,47,12,4,3]
+
     bcis.sort(arr)
     print(arr)
+    print('sorted? -> ', dataset['kecil_sorted'] == arr)
     
     

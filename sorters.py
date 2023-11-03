@@ -1,14 +1,20 @@
+import math
+
+
 class BCIS:
     def sort(self, arr: list[int]) -> None:
         """
         Bidirectional-Conditional-Insertion-Sort implementation -> O() time
         """
         # TODO: implement BCIS algorithm
-        SL = 0
-        SR = len(arr) - 1
+        left = 0
+        right = len(arr) - 1
+
+        SL = left
+        SR = right
 
         while SL < SR:
-            mid = (SR - SL) / 2
+            mid = int((SR - SL) / 2)
             self.swap(arr, SR, SL + mid)
 
             if arr[SL] == arr[SR]:
@@ -19,7 +25,7 @@ class BCIS:
                 self.swap(arr, SL, SR)
 
             if (SR - SL) >= 100:
-                for i in range(SL + 1, pow((SR - SL), 0.5)):
+                for i in range(SL + 1, int(math.sqrt(SR - SL))):
                     if arr[SR] < arr[i]:
                         self.swap(arr, SR, i)
                     elif arr[SL] > arr[i]:
@@ -36,15 +42,15 @@ class BCIS:
 
                 if curr_item >= RC:
                     arr[i] = arr[SR - 1]
-                    self.ins_right(arr, curr_item, SR, arr[len(arr) - 1])
+                    self.ins_right(arr, curr_item, SR, right)
                     SR -= 1
 
                 elif curr_item <= LC:
                     arr[i] = arr[SL + 1]
-                    self.ins_left(arr, curr_item, SL, arr[len(arr) - 1])
+                    self.ins_left(arr, curr_item, SL, left)
                     SL += 1
                     i += 1
-                    
+
                 else:
                     i += 1
             
