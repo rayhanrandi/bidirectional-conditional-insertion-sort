@@ -21,6 +21,8 @@ def execute_counting_sort():
 
 if __name__ == '__main__':
 
-
-    execute_counting_sort()
+    arr = dataset['kecil_randomized']
+    bcis.sort(arr)
+    print(arr)
+    
     
