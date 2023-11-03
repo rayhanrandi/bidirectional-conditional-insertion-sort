@@ -3,6 +3,7 @@ import dataset
 from sorters import BCIS, CountingSort
 
 
+# Set up
 bcis = BCIS()
 counting_sort = CountingSort()
 dataset = dataset.generate()

@@ -4,14 +4,13 @@ import math
 class BCIS:
     def sort(self, arr: list[int]) -> None:
         """
-        Bidirectional-Conditional-Insertion-Sort implementation -> O() time
+        Bidirectional-Conditional-Insertion-Sort implementation
         """
-        # TODO: implement BCIS algorithm
         left = 0
         right = len(arr) - 1
 
-        SL = left
-        SR = right
+        SL = left   # left sorted section
+        SR = right  # right sorted section
 
         # Find left and right comparator
         while SL < SR:
@@ -19,24 +18,26 @@ class BCIS:
             self.swap(arr, SR, SL + mid)
 
             if arr[SL] == arr[SR]:
-                if self.is_equal(arr, SL, SR) != -1:
+                if self.is_equal(arr, SL, SR) == -1:
                     return
                 
             if arr[SL] > arr[SR]:
                 self.swap(arr, SL, SR)
 
-            if (SL - SR) >= 100:
-                for i in range((SL + 1), int(math.sqrt(SR - SL))):
+            i = SL + 1
+            if (SR - SL) >= 100:
+                while i <= int(math.sqrt(SR - SL)):
                     if arr[SR] < arr[i]:
                         self.swap(arr, SR, i)
                     elif arr[SL] > arr[i]:
                         self.swap(arr, SL, i)
+                    i += 1
 
             else:
                 i = SL + 1
 
-            LC = arr[SL]
-            RC = arr[SR]
+            LC = arr[SL]    # left comparator
+            RC = arr[SR]    # right comparator
 
             # Begin sorting
             while i < SR:
