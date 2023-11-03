@@ -37,7 +37,7 @@ if __name__ == '__main__':
         bcis.sort(bcis_arr)  # sorts in-place
         end_time = time.time()
 
-        print('(BCIS) Sorted -> ', comparator == bcis_arr)
+        print('(BCIS) Sorted ->', comparator == bcis_arr)
         bcis_elapsed = (end_time - start_time) * 1000  # to ms
 
         # Run Counting Sort
@@ -47,11 +47,11 @@ if __name__ == '__main__':
         cs_arr = counting_sort.sort(arr)  # not in-place
         end_time = time.time()
 
-        print('(Counting Sort) Sorted -> ', comparator == cs_arr)
+        print('(Counting Sort) Sorted ->', comparator == cs_arr)
         cs_elapsed = (end_time - start_time) * 1000  # to ms
 
-        print(f'BCIS Runtime: {bcis_elapsed} ms.')
-        print(f'CS Runtime: {cs_elapsed} ms.')
+        print(f'BCIS Runtime: {bcis_elapsed:.2f} ms.')
+        print(f'CS Runtime: {cs_elapsed:.2f} ms.')
         print('Done.\n')
         
     
