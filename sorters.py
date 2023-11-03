@@ -13,19 +13,20 @@ class BCIS:
         SL = left
         SR = right
 
+        # Find left and right comparator
         while SL < SR:
-            mid = int((SR - SL) / 2)
+            mid = (SR - SL) // 2
             self.swap(arr, SR, SL + mid)
 
             if arr[SL] == arr[SR]:
-                if self.is_equal(arr, SL, SR) == -1:
+                if self.is_equal(arr, SL, SR) != -1:
                     return
                 
             if arr[SL] > arr[SR]:
                 self.swap(arr, SL, SR)
 
-            if (SR - SL) >= 100:
-                for i in range(SL + 1, int(math.sqrt(SR - SL))):
+            if (SL - SR) >= 100:
+                for i in range((SL + 1), int(math.sqrt(SR - SL))):
                     if arr[SR] < arr[i]:
                         self.swap(arr, SR, i)
                     elif arr[SL] > arr[i]:
@@ -37,6 +38,7 @@ class BCIS:
             LC = arr[SL]
             RC = arr[SR]
 
+            # Begin sorting
             while i < SR:
                 curr_item = arr[i]
 
@@ -60,7 +62,7 @@ class BCIS:
     # Helper functions
     def is_equal(self, arr: list[int], SL: int, SR: int) -> int:
         """
-        
+        checks to prevent equal comparator for left and right section
         """
         for k in range(SL + 1, SR - 1):
             if arr[k] != arr[SL]:
@@ -70,7 +72,7 @@ class BCIS:
     
     def ins_right(self, arr: list[int], curr_item: int, SR: int, right: int) -> None:
         """
-        
+        place element in right sorted section of array
         """
         j = SR
         while j <= right and curr_item > arr[j]:
@@ -80,7 +82,7 @@ class BCIS:
 
     def ins_left(self, arr: list[int], curr_item: int, SL: int, left: int) -> None:
         """
-        
+        place element in right sorted section of array
         """
         j = SL
         while j >= left and curr_item < arr[j]:
