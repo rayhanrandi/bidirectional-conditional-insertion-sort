@@ -6,7 +6,7 @@ from sorters import BCIS, CountingSort
 # Set up
 bcis = BCIS()
 counting_sort = CountingSort()
-dataset = dataset.generate()
+datasets = dataset.generate()
 
 
 if __name__ == '__main__':
@@ -17,11 +17,14 @@ if __name__ == '__main__':
         2106705644
         DAA - A, Kode Asdos - 1
         ''')
+    
+    # Evaluate & export used dataset
+    for k in datasets.keys():
+        # export
+        dataset.write_to_file(f'{k}.txt', str(datasets[k]))
 
-    # Evaluate
-    for k in dataset.keys():
         # Counting Sort array
-        arr = dataset[k]
+        arr = datasets[k]
         # BCIS array
         bcis_arr = arr
         comparator = sorted(arr)
