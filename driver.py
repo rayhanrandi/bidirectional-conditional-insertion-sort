@@ -1,4 +1,6 @@
+import os
 import time 
+import psutil
 import dataset
 from sorters import BCIS, CountingSort
 
@@ -13,13 +15,24 @@ if __name__ == '__main__':
 
     print(
         '''
+        Comparing...
+        ''')
+
+    # write results to output.txt
+    f = open('output.txt', "w")
+
+    f.write(
+        '''
         Rayhan Putra Randi
         2106705644
         DAA - A, Kode Asdos - 1
-        ''')
+        \n''')
     
     # Evaluate & export used dataset
     for k in datasets.keys():
+        print(
+            f'''
+        {k}...''', end='')
         # export
         dataset.write_to_file(f'{k}.txt', str(datasets[k]))
 
@@ -31,30 +44,42 @@ if __name__ == '__main__':
 
         arr_preview = str(bcis_arr[:3])[:-1] + ', ... , ' + str(bcis_arr[-3:])[1:]
 
-        print(f'Test data: {k} ({arr_preview})')
+        f.write(f'Test data: {k} ({arr_preview})\n')
 
         # Run BCIS
-        print('(BCIS) Sorting...')
+        f.write('(BCIS) Sorting...\n')
 
-        start_time = time.time()
+        # Calculate runtime & memory usage
+        start_time = time.perf_counter()
+
         bcis.sort(bcis_arr)  # sorts in-place
-        end_time = time.time()
 
-        print('(BCIS) Sorted ->', comparator == bcis_arr)
+        end_time = time.perf_counter()
+
+        f.write(f'(BCIS) Sorted ->  {comparator == bcis_arr}\n')
         bcis_elapsed = (end_time - start_time) * 1000  # to ms
 
         # Run Counting Sort
-        print('(Counting Sort) Sorting... ')
+        f.write('(Counting Sort) Sorting... \n')
 
-        start_time = time.time()
+        start_time = time.perf_counter()
+
         cs_arr = counting_sort.sort(arr)  # not in-place
-        end_time = time.time()
 
-        print('(Counting Sort) Sorted ->', comparator == cs_arr)
+        end_time = time.perf_counter()
+
+        f.write(f'(Counting Sort) Sorted -> {comparator == cs_arr}\n')
         cs_elapsed = (end_time - start_time) * 1000  # to ms
 
-        print(f'BCIS Runtime: {bcis_elapsed:.2f} ms.')
-        print(f'CS Runtime: {cs_elapsed:.2f} ms.')
-        print('Done.\n')
-        
+        f.write(f'BCIS Runtime: {bcis_elapsed:.2f} ms.\n')
+        f.write(f'CS Runtime: {cs_elapsed:.2f} ms.\n')
+        f.write('Done.\n\n')
+        print(' done.')
+
+    print(
+        '''
+        Done.
+        Results exported to output.txt.
+        ''')
     
+    f.close()
