@@ -1,3 +1,4 @@
+import os
 import random
 
 
@@ -10,15 +11,32 @@ KECIL = 500
 SEDANG = 5000
 BESAR = 50000
 
+# current path
+BASE_DIR = os.getcwd()
+
+
+def write_to_file(filename: str, content: str) -> None:
+    """
+    writes dataset to .txt file, overwrites if file is already present in path
+    """
+    f = open(os.path.join(BASE_DIR, 'analysis_dataset', filename), "w")
+    f.write(content + '\n')
+    f.close()
 
 def generate_sorted(size: int) -> list[int]:
-    return sorted(generate_randomized(size))
+    dataset = sorted(generate_randomized(size))
+    # write_to_file(f'{size}_sorted.txt', str(dataset))
+    return dataset
 
 def generate_randomized(size: int) -> list[int]:
-    return list(random.randint(MIN_VALUE, MAX_VALUE) for _ in range(size))
+    dataset = list(random.randint(MIN_VALUE, MAX_VALUE) for _ in range(size))
+    # write_to_file(f'{size}_randomized.txt', str(dataset))
+    return dataset
 
 def generate_reversed(size: int) -> list[int]:
-    return generate_sorted(size)[::-1]
+    dataset = generate_sorted(size)[::-1]
+    # write_to_file(f'{size}_reversed.txt', str(dataset))
+    return dataset
 
 
 def generate() -> dict:
