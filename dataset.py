@@ -19,24 +19,18 @@ def write_to_file(filename: str, content: str) -> None:
     """
     writes dataset to .txt file, overwrites if file is already present in path
     """
-    f = open(os.path.join(BASE_DIR, 'analysis_dataset', filename), "w")
+    f = open(os.path.join(BASE_DIR, 'analysis_datasets', filename), "w")
     f.write(content + '\n')
     f.close()
 
 def generate_sorted(size: int) -> list[int]:
-    dataset = sorted(generate_randomized(size))
-    # write_to_file(f'{size}_sorted.txt', str(dataset))
-    return dataset
+    return sorted(generate_randomized(size))
 
 def generate_randomized(size: int) -> list[int]:
-    dataset = list(random.randint(MIN_VALUE, MAX_VALUE) for _ in range(size))
-    # write_to_file(f'{size}_randomized.txt', str(dataset))
-    return dataset
+    return list(random.randint(MIN_VALUE, MAX_VALUE) for _ in range(size))
 
 def generate_reversed(size: int) -> list[int]:
-    dataset = generate_sorted(size)[::-1]
-    # write_to_file(f'{size}_reversed.txt', str(dataset))
-    return dataset
+    return generate_sorted(size)[::-1]
 
 
 def generate() -> dict:
