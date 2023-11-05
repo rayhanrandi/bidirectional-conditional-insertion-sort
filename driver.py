@@ -80,9 +80,9 @@ if __name__ == '__main__':
         cs_mem_usage = cs_result[1]
 
         f.write(f'BCIS Runtime: {bcis_elapsed:.2f} ms.\n')
-        f.write(f'BCIS Memory Usage: {bcis_mem_usage:.2f} KB.\n')
+        f.write(f'BCIS Memory Usage: {bcis_mem_usage:.2f} MB.\n')
         f.write(f'CS Runtime: {cs_elapsed:.2f} ms.\n')
-        f.write(f'CS Memory Usage: {cs_mem_usage:.2f} KB.\n')
+        f.write(f'CS Memory Usage: {cs_mem_usage:.2f} MB.\n')
         f.write('Done.\n\n')
         print(' done.')
 

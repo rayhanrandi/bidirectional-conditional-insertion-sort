@@ -5,11 +5,11 @@ import psutil
 
 def process_memory() -> int:
     '''
-    evaluates memory usage in bytes
+    evaluates memory usage in MB
     '''
     process = psutil.Process(os.getpid())
     mem_info = process.memory_info()
-    return mem_info.rss
+    return mem_info.rss / (1024 ** 2)   # bytes to MB
 
 
 class BCIS:
@@ -77,8 +77,7 @@ class BCIS:
 
         end_mem = process_memory()
         
-        memory_usage = (end_mem - start_mem) * 0.001    # to KB
-        print('BCIS memory usage', memory_usage)
+        memory_usage = (end_mem - start_mem)
 
         return memory_usage
 
@@ -165,8 +164,7 @@ class CountingSort:
         
         end_mem = process_memory()
 
-        memory_usage = (end_mem - start_mem) * 0.001    # to KB
-        print('CS memory usage', memory_usage)
+        memory_usage = (end_mem - start_mem)
 
         return [output_arr, memory_usage]
 
