@@ -34,7 +34,9 @@ class BCIS:
 
             if arr[SL] == arr[SR]:
                 if self.is_equal(arr, SL, SR) == -1:
-                    return
+                    end_mem = process_memory()
+                    memory_usage = (end_mem - start_mem)
+                    return memory_usage
                 
             if arr[SL] > arr[SR]:
                 self.swap(arr, SL, SR)
