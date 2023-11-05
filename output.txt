@@ -3,102 +3,102 @@
         2106705644
         DAA - A, Kode Asdos - 1
         
-Test data: kecil_sorted ([31, 94, 241, ... , 49795, 49808, 49875])
+Test data: kecil_sorted ([43, 253, 268, ... , 49759, 49803, 49888])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 0.48 ms.
-BCIS Memory Usage: 4.10 KB.
-CS Runtime: 3.03 ms.
-CS Memory Usage: 1183.74 KB.
+BCIS Runtime: 0.25 ms.
+BCIS Memory Usage: 0.00 MB.
+CS Runtime: 2.78 ms.
+CS Memory Usage: 1.07 MB.
 Done.
 
-Test data: kecil_randomized ([34420, 19858, 40998, ... , 9578, 16816, 15767])
+Test data: kecil_randomized ([10781, 9309, 11087, ... , 19210, 24705, 15533])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 1.78 ms.
-BCIS Memory Usage: 0.00 KB.
+BCIS Runtime: 1.01 ms.
+BCIS Memory Usage: 0.00 MB.
 CS Runtime: 2.71 ms.
-CS Memory Usage: 397.31 KB.
+CS Memory Usage: 0.45 MB.
 Done.
 
-Test data: kecil_reversed ([50000, 49834, 49829, ... , 341, 212, 57])
+Test data: kecil_reversed ([49784, 49706, 49684, ... , 84, 28, 8])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 1.99 ms.
-BCIS Memory Usage: 0.00 KB.
-CS Runtime: 2.73 ms.
-CS Memory Usage: 466.94 KB.
+BCIS Runtime: 2.17 ms.
+BCIS Memory Usage: 0.00 MB.
+CS Runtime: 2.54 ms.
+CS Memory Usage: 0.38 MB.
 Done.
 
-Test data: sedang_sorted ([32, 34, 39, ... , 49996, 49999, 50000])
+Test data: sedang_sorted ([51, 53, 74, ... , 49977, 49984, 49992])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 1.67 ms.
-BCIS Memory Usage: 0.00 KB.
-CS Runtime: 3.46 ms.
-CS Memory Usage: 1056.77 KB.
+BCIS Runtime: 1.70 ms.
+BCIS Memory Usage: 0.00 MB.
+CS Runtime: 3.40 ms.
+CS Memory Usage: 1.07 MB.
 Done.
 
-Test data: sedang_randomized ([18006, 15475, 29012, ... , 11341, 7230, 685])
+Test data: sedang_randomized ([14749, 12413, 27041, ... , 22291, 45820, 12395])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 71.24 ms.
-BCIS Memory Usage: 0.00 KB.
-CS Runtime: 4.02 ms.
-CS Memory Usage: 1445.89 KB.
+BCIS Runtime: 211.99 ms.
+BCIS Memory Usage: 0.00 MB.
+CS Runtime: 3.32 ms.
+CS Memory Usage: 0.38 MB.
 Done.
 
-Test data: sedang_reversed ([49996, 49986, 49972, ... , 18, 15, 2])
+Test data: sedang_reversed ([49990, 49990, 49984, ... , 24, 16, 4])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 202.44 ms.
-BCIS Memory Usage: 0.00 KB.
-CS Runtime: 3.88 ms.
-CS Memory Usage: 1449.98 KB.
+BCIS Runtime: 201.29 ms.
+BCIS Memory Usage: 0.00 MB.
+CS Runtime: 3.36 ms.
+CS Memory Usage: 0.38 MB.
 Done.
 
-Test data: besar_sorted ([0, 0, 2, ... , 49994, 49994, 49997])
+Test data: besar_sorted ([0, 0, 1, ... , 49999, 50000, 50000])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 18.69 ms.
-BCIS Memory Usage: 0.00 KB.
-CS Runtime: 9.75 ms.
-CS Memory Usage: 1912.83 KB.
+BCIS Runtime: 18.42 ms.
+BCIS Memory Usage: 0.00 MB.
+CS Runtime: 9.34 ms.
+CS Memory Usage: 0.82 MB.
 Done.
 
-Test data: besar_randomized ([25955, 16286, 44078, ... , 8957, 14935, 29302])
+Test data: besar_randomized ([8314, 36699, 9042, ... , 44097, 46809, 35383])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 9562.73 ms.
-BCIS Memory Usage: 0.00 KB.
-CS Runtime: 10.13 ms.
-CS Memory Usage: 1851.39 KB.
+BCIS Runtime: 11063.99 ms.
+BCIS Memory Usage: 0.00 MB.
+CS Runtime: 9.60 ms.
+CS Memory Usage: 0.76 MB.
 Done.
 
-Test data: besar_reversed ([49998, 49998, 49997, ... , 0, 0, 0])
+Test data: besar_reversed ([50000, 50000, 50000, ... , 2, 1, 1])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 21731.60 ms.
-BCIS Memory Usage: 36.86 KB.
-CS Runtime: 9.85 ms.
-CS Memory Usage: 1843.20 KB.
+BCIS Runtime: 22018.95 ms.
+BCIS Memory Usage: 0.04 MB.
+CS Runtime: 9.88 ms.
+CS Memory Usage: 0.76 MB.
 Done.
 
