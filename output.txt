@@ -3,84 +3,102 @@
         2106705644
         DAA - A, Kode Asdos - 1
         
-Test data: kecil_sorted ([50, 309, 510, ... , 49813, 49904, 49961])
+Test data: kecil_sorted ([31, 94, 241, ... , 49795, 49808, 49875])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 0.17 ms.
-CS Runtime: 2.79 ms.
+BCIS Runtime: 0.48 ms.
+BCIS Memory Usage: 4.10 KB.
+CS Runtime: 3.03 ms.
+CS Memory Usage: 1183.74 KB.
 Done.
 
-Test data: kecil_randomized ([48570, 42342, 27732, ... , 35959, 31915, 42254])
+Test data: kecil_randomized ([34420, 19858, 40998, ... , 9578, 16816, 15767])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 0.80 ms.
-CS Runtime: 2.70 ms.
+BCIS Runtime: 1.78 ms.
+BCIS Memory Usage: 0.00 KB.
+CS Runtime: 2.71 ms.
+CS Memory Usage: 397.31 KB.
 Done.
 
-Test data: kecil_reversed ([49945, 49923, 49896, ... , 315, 290, 112])
+Test data: kecil_reversed ([50000, 49834, 49829, ... , 341, 212, 57])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 2.02 ms.
-CS Runtime: 2.63 ms.
+BCIS Runtime: 1.99 ms.
+BCIS Memory Usage: 0.00 KB.
+CS Runtime: 2.73 ms.
+CS Memory Usage: 466.94 KB.
 Done.
 
-Test data: sedang_sorted ([35, 52, 53, ... , 49980, 49994, 49996])
+Test data: sedang_sorted ([32, 34, 39, ... , 49996, 49999, 50000])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 1.63 ms.
-CS Runtime: 3.61 ms.
+BCIS Runtime: 1.67 ms.
+BCIS Memory Usage: 0.00 KB.
+CS Runtime: 3.46 ms.
+CS Memory Usage: 1056.77 KB.
 Done.
 
-Test data: sedang_randomized ([38888, 11091, 1466, ... , 37739, 46997, 9159])
+Test data: sedang_randomized ([18006, 15475, 29012, ... , 11341, 7230, 685])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 68.90 ms.
-CS Runtime: 3.52 ms.
+BCIS Runtime: 71.24 ms.
+BCIS Memory Usage: 0.00 KB.
+CS Runtime: 4.02 ms.
+CS Memory Usage: 1445.89 KB.
 Done.
 
-Test data: sedang_reversed ([49987, 49986, 49970, ... , 43, 30, 21])
+Test data: sedang_reversed ([49996, 49986, 49972, ... , 18, 15, 2])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 209.69 ms.
-CS Runtime: 3.59 ms.
+BCIS Runtime: 202.44 ms.
+BCIS Memory Usage: 0.00 KB.
+CS Runtime: 3.88 ms.
+CS Memory Usage: 1449.98 KB.
 Done.
 
-Test data: besar_sorted ([0, 2, 2, ... , 49995, 49995, 50000])
+Test data: besar_sorted ([0, 0, 2, ... , 49994, 49994, 49997])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 20.67 ms.
-CS Runtime: 9.54 ms.
+BCIS Runtime: 18.69 ms.
+BCIS Memory Usage: 0.00 KB.
+CS Runtime: 9.75 ms.
+CS Memory Usage: 1912.83 KB.
 Done.
 
-Test data: besar_randomized ([27892, 6196, 3060, ... , 11123, 17737, 18576])
+Test data: besar_randomized ([25955, 16286, 44078, ... , 8957, 14935, 29302])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 13120.12 ms.
-CS Runtime: 9.96 ms.
+BCIS Runtime: 9562.73 ms.
+BCIS Memory Usage: 0.00 KB.
+CS Runtime: 10.13 ms.
+CS Memory Usage: 1851.39 KB.
 Done.
 
-Test data: besar_reversed ([50000, 49999, 49999, ... , 4, 4, 3])
+Test data: besar_reversed ([49998, 49998, 49997, ... , 0, 0, 0])
 (BCIS) Sorting...
 (BCIS) Sorted ->  True
 (Counting Sort) Sorting... 
 (Counting Sort) Sorted -> True
-BCIS Runtime: 22031.84 ms.
-CS Runtime: 10.16 ms.
+BCIS Runtime: 21731.60 ms.
+BCIS Memory Usage: 36.86 KB.
+CS Runtime: 9.85 ms.
+CS Memory Usage: 1843.20 KB.
 Done.
 

@@ -1,11 +1,26 @@
+import os
 import math
+import psutil
+
+
+def process_memory() -> int:
+    '''
+    evaluates memory usage in bytes
+    '''
+    process = psutil.Process(os.getpid())
+    mem_info = process.memory_info()
+    return mem_info.rss
 
 
 class BCIS:
-    def sort(self, arr: list[int]) -> None:
+    def sort(self, arr: list[int]) -> int:
         """
-        Bidirectional-Conditional-Insertion-Sort implementation
+        Bidirectional-Conditional-Insertion-Sort implementation.
+        return: memory usage
         """
+        # calculate memory usage
+        start_mem = process_memory()
+
         left = 0
         right = len(arr) - 1
 
@@ -60,6 +75,13 @@ class BCIS:
             SL += 1
             SR -= 1
 
+        end_mem = process_memory()
+        
+        memory_usage = (end_mem - start_mem) * 0.001    # to KB
+        print('BCIS memory usage', memory_usage)
+
+        return memory_usage
+
     # Helper functions
     def is_equal(self, arr: list[int], SL: int, SR: int) -> int:
         """
@@ -101,17 +123,21 @@ class BCIS:
 
 
 class CountingSort:
-    def sort(self, arr: list[int]) -> list[int]:
+    def sort(self, arr: list[int]) -> list[list[int], int]:
         """
-        Counting sort implementation -> O(n) time
+        Counting sort implementation -> O(n+k)
+        return: [sorted array, memory usage]
         credits: https://stackabuse.com/counting-sort-in-python/
         """
+        # calculate memory usage
+        start_mem = process_memory()
+
         # Find the maximum element in the inputArray [O(n)]
         max_element = max(arr)
 
         count_array_length = max_element + 1
 
-        # Initialize the count_array with (max+1) zeros [O(1)]
+        # Initialize the count_array with (max+1) zeros
         count_array = [0] * count_array_length
 
         # Step 1 -> Traverse the arr and increase 
@@ -127,7 +153,7 @@ class CountingSort:
             count_array[i] += count_array[i-1] 
 
         # Step 3 -> Calculate element position
-        # based on the count_array values [O(n)]
+        # based on the count_array values [O(k)]
         output_arr = [0] * len(arr)
         i = len(arr) - 1
         while i >= 0:
@@ -136,6 +162,11 @@ class CountingSort:
             new_position = count_array[current_el]
             output_arr[new_position] = current_el
             i -= 1
+        
+        end_mem = process_memory()
 
-        return output_arr
+        memory_usage = (end_mem - start_mem) * 0.001    # to KB
+        print('CS memory usage', memory_usage)
+
+        return [output_arr, memory_usage]
 

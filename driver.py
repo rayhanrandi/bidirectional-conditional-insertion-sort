@@ -11,6 +11,12 @@ counting_sort = CountingSort()
 datasets = dataset.generate()
 
 
+def process_memory():
+    process = psutil.Process(os.getpid())
+    mem_info = process.memory_info()
+    return mem_info.rss
+
+
 if __name__ == '__main__':
 
     print(
@@ -49,30 +55,34 @@ if __name__ == '__main__':
         # Run BCIS
         f.write('(BCIS) Sorting...\n')
 
-        # Calculate runtime & memory usage
+        # Calculate runtime
         start_time = time.perf_counter()
 
-        bcis.sort(bcis_arr)  # sorts in-place
+        bcis_result = bcis.sort(bcis_arr)  # sorts in-place
 
         end_time = time.perf_counter()
 
         f.write(f'(BCIS) Sorted ->  {comparator == bcis_arr}\n')
         bcis_elapsed = (end_time - start_time) * 1000  # to ms
+        bcis_mem_usage = bcis_result
 
         # Run Counting Sort
         f.write('(Counting Sort) Sorting... \n')
 
         start_time = time.perf_counter()
 
-        cs_arr = counting_sort.sort(arr)  # not in-place
+        cs_result = counting_sort.sort(arr)  # not in-place
 
         end_time = time.perf_counter()
 
-        f.write(f'(Counting Sort) Sorted -> {comparator == cs_arr}\n')
+        f.write(f'(Counting Sort) Sorted -> {comparator == cs_result[0]}\n')
         cs_elapsed = (end_time - start_time) * 1000  # to ms
+        cs_mem_usage = cs_result[1]
 
         f.write(f'BCIS Runtime: {bcis_elapsed:.2f} ms.\n')
+        f.write(f'BCIS Memory Usage: {bcis_mem_usage:.2f} KB.\n')
         f.write(f'CS Runtime: {cs_elapsed:.2f} ms.\n')
+        f.write(f'CS Memory Usage: {cs_mem_usage:.2f} KB.\n')
         f.write('Done.\n\n')
         print(' done.')
 
