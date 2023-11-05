@@ -1,6 +1,6 @@
 # Bidirectional-Conditional-Insertion-Sort (BCIS) & Counting Sort
 
-Compares two sorting algorithms' running time in ms.
+Compares two sorting algorithms' running time in millisecond and its memory usage for small (500), medium (500), and large (50000) sized data where each data has 3 variants, sorted, randomized, and reversed. Data elements ranges from 0 to 50000.
 
 - `driver.py` : Executes both sorting algorithms, prints running time and memory usage for each datasets/sorting algorithm.
 - `sorters.py` : BCIS and Counting Sort implementation.
